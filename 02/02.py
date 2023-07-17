@@ -3,6 +3,9 @@ from langchain.chains import ConversationChain
 from langchain.memory import ConversationSummaryBufferMemory
 from prompt_toolkit import prompt
 
+from rich.console import Console
+console = Console()
+
 llm = ChatOpenAI()
 conversation = ConversationChain(
     llm=llm,
@@ -13,6 +16,9 @@ conversation = ConversationChain(
 )
 
 while True:
-  user_input = prompt('Human: ')
+  user_input = prompt(console.print('Human: ', style="green"))
+  print()
+  
   result = conversation.predict(input=user_input)
-  print("AI:", result)
+  print(console.print('AI: ', style="green"), result)
+  print()

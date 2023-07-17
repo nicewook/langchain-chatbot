@@ -8,7 +8,10 @@ Base: LangChain, OpenAI, Memory를 활용한 챗봇 구현
 - Streaming
 
 ## install
-
+```bash
+pip install rich
+pip install prompt_toolkit
+```
 
 ##  참고 링크
 python prompt toolkit: 
